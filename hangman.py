@@ -66,7 +66,7 @@ def start_game():
           result[j+1] = ""
         j+=3
     else:
-      lives-=1
+      lives-=diff
       print("There is no such letter:P")
 
 
