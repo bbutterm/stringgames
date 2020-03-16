@@ -3,7 +3,7 @@ word = ""
 result = ""
 diff = 0
 chars = 0
-
+already = []
 def print_line(list):
   s = ""
   for i in list:
@@ -39,6 +39,7 @@ def start_game():
   global result
   global chars
   global lives
+  global already
   while chars >= 0:
     if chars == 0:
       print("You win and save your life<3")
@@ -49,6 +50,12 @@ def start_game():
       return 0
     j = 1
     c = get_char()
+    if c not in already:
+      already.append(c)
+    else:
+      print("You already sad:")
+      print_line(already)
+      return start_game()
     if c in word:
       print("Thats right dude!")
       for i in word:
@@ -66,4 +73,3 @@ def start_game():
 
 init_game()
 start_game()
-print_line(result)
