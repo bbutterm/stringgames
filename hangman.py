@@ -1,3 +1,4 @@
+import os
 lives = 3
 word = ""
 result = ""
@@ -23,6 +24,7 @@ def init_game():
   global result
   global diff
   word = input("Enter word:")
+  os.system('clear')
   l = len(word)
   chars = l
   while l > 0:
